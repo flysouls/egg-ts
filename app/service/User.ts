@@ -6,6 +6,7 @@ import BaseService from './Base';
 const tableName = 'user';
 
 export default class User extends BaseService {
+
   /**
    * add user
    */

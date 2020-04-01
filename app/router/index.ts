@@ -8,4 +8,5 @@ export default (app: Application) => {
   router.get('/del-user', controller.home.delUser);
   router.get('/updata-user', controller.home.updataUser);
   router.get('/query-user', controller.home.queryUser);
+  router.get('/home', controller.home.getHome);
 };

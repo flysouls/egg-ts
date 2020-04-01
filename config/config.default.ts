@@ -1,4 +1,5 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import * as path from 'path';
 
 export default (appInfo: EggAppInfo) => {
   const config = {} as PowerPartial<EggAppConfig>;
@@ -23,6 +24,19 @@ export default (appInfo: EggAppInfo) => {
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0,
+  };
+
+  // view
+  config.view = {
+    defaultExtension: '.njk',
+    defaultViewEngine: 'nunjucks',
+    mapping: {
+      '.njk': 'nunjucks',
+    },
+    root: [
+      path.join(appInfo.baseDir, 'app/view'),
+      // path.join(appInfo.baseDir, 'path/to/another'),
+    ].join(','),
   };
 
   // the return config will combines to EggAppConfig

@@ -10,7 +10,7 @@ describe('test/app/service/Test.test.js', () => {
   });
 
   it('sayHi', async () => {
-    const result = await ctx.service.test.sayHi('egg');
+    const result = await ctx.service.test.sayHi();
     assert(result === 'hi, egg');
   });
 });
